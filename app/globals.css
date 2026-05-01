@@ -24,9 +24,10 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Hide the navbar while a project modal is open — set on body
+/* Hide the navbar + side rails while a project modal is open — set on body
    from ProjectModal so the modal owns the entire viewport. */
-body.modal-open nav {
+body.modal-open nav,
+body.modal-open .side-rails {
   display: none;
 }
 

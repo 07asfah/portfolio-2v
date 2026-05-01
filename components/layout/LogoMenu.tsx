@@ -91,7 +91,7 @@ export default function LogoMenu() {
 
   const handleCopyEmail = async () => {
     try {
-      await navigator.clipboard.writeText("ayman.dofus@gmail.com");
+      await navigator.clipboard.writeText("moussaid.hafsa8@gmail.com");
       setCopied(true);
       window.setTimeout(() => setCopied(false), 1500);
     } catch {

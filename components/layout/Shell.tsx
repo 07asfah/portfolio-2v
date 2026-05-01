@@ -5,6 +5,7 @@ import SecurityBackground from "@/components/effects/SecurityBackground";
 import IntroAnimation from "@/components/effects/IntroAnimation";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import SideRails from "@/components/layout/SideRails";
 
 /**
  * Client-side shell so we can hold intro-animation state without making
@@ -17,6 +18,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
     <>
       <SecurityBackground />
       <Navbar />
+      <SideRails />
       {!introDone && <IntroAnimation onComplete={() => setIntroDone(true)} />}
       <div className="relative z-10">{children}</div>
       <Footer />

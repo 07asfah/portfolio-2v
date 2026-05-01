@@ -1,49 +1,67 @@
-import Section from "@/components/ui/Section";
-import SectionHeader from "@/components/ui/SectionHeader";
+"use client";
+
 import Reveal from "@/components/ui/Reveal";
 
-const channels = [
-  { label: "email",  value: "ayman.dofus@gmail.com", href: "mailto:ayman.dofus@gmail.com" },
-  { label: "github", value: "github.com/07asfah",    href: "https://github.com/07asfah"   },
-];
+const EMAIL = "moussaid.hafsa8@gmail.com";
+
+const MailIcon = ({ size = 18 }: { size?: number }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.7"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <rect x="3" y="5" width="18" height="14" rx="2" />
+    <path d="M3 7l9 6 9-6" />
+  </svg>
+);
 
 export default function Contact() {
   return (
-    <Section id="contact">
-      <SectionHeader
-        label="contact()"
-        title="Let's talk."
-        description="I read everything. Best for collaborations, security reviews, or hard architecture questions."
-      />
+    <section
+      id="contact"
+      className="relative px-8 md:px-20 py-24 md:py-32 scroll-mt-24"
+    >
+      <div className="max-w-3xl mx-auto text-center">
 
-      <Reveal>
-        <ul className="border-t border-[var(--border)] max-w-2xl">
-          {channels.map((c) => (
-            <li
-              key={c.label}
-              className="border-b border-[var(--border)]"
-            >
-              <a
-                href={c.href}
-                target={c.href.startsWith("http") ? "_blank" : undefined}
-                rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="flex items-baseline justify-between py-6
-                           group transition-colors"
-              >
-                <span className="font-mono text-[10px] tracking-[3px]
-                                 text-[var(--muted)] uppercase">
-                  .{c.label}
-                </span>
-                <span className="text-sm text-[var(--text)]
-                                 group-hover:text-[var(--accent)]
-                                 transition-colors">
-                  {c.value}
-                </span>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </Reveal>
-    </Section>
+        <Reveal>
+          <h2 className="font-mono text-4xl md:text-6xl font-normal
+                         tracking-tight mb-10">
+            <span className="text-[var(--text)]">.contact</span>
+            <span style={{ color: "rgba(0, 255, 100, 0.55)" }}>()</span>
+          </h2>
+        </Reveal>
+
+        <Reveal>
+          <p className="font-mono text-base md:text-lg text-[var(--muted)]
+                        leading-relaxed mb-12 max-w-2xl mx-auto">
+            Always eager for new challenges and opportunities to grow.
+            Have a project or idea I could help with? Reach out via the
+            contact button below or through my social links.
+          </p>
+        </Reveal>
+
+        <Reveal>
+          <a
+            href={`mailto:${EMAIL}`}
+            className="inline-flex items-center gap-3
+                       font-mono text-base
+                       border border-[var(--accent-green)]
+                       text-[var(--accent-green)]
+                       px-7 py-4 rounded
+                       hover:bg-[rgba(0,255,100,0.1)]
+                       transition-colors"
+          >
+            <MailIcon size={18} />
+            Say hello!
+          </a>
+        </Reveal>
+
+      </div>
+    </section>
   );
 }
